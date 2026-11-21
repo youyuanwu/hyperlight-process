@@ -9,10 +9,11 @@ Small experiments with [Hyperlight](https://github.com/hyperlight-dev/hyperlight
   same guest into a native Rust subprocess or directly into its host without KVM.
 - [Three-mode benchmarks](samples/benchmark/README.md): shared C workloads,
   Criterion steady-state measurements, and lifecycle/per-call latency CSV.
-- [PostgreSQL experiment](samples/postgres/README.md): pinned Hyperlight-Unikraft
+- [PostgreSQL experiment](https://github.com/youyuanwu/hyperlight-postgres)
+  (moved to its own repository): pinned Hyperlight-Unikraft
   baseline, PostgreSQL 16.15 server, host-backed synchronization, and measured
   spill/fresh-VM recovery gates, with a
-  [native/guest performance results](samples/postgres/RESULTS.md) and
+  [native/guest performance results](https://github.com/youyuanwu/hyperlight-postgres/blob/main/RESULTS.md) and
   reproducible validation suites.
 
 ## Rust workspace
