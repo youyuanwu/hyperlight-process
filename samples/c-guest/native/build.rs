@@ -10,6 +10,10 @@ fn main() -> Result<()> {
     let sample = manifest
         .parent()
         .context("native sample has no parent directory")?;
+    std::fs::create_dir_all(sample.join("build"))?;
+    // The benchmark build script runs make on the same sample; serialize SDK setup.
+    let lock = std::fs::File::create(sample.join("build/.make.lock"))?;
+    lock.lock().context("locking the C guest build directory")?;
     let status = Command::new("make")
         .arg("-C")
         .arg(sample)
