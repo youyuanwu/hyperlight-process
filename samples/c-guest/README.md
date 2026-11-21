@@ -15,7 +15,7 @@ host's libc.
 
 - **Linux x86_64**, hardware virtualization enabled, and read/write access to
   `/dev/kvm`. Inside another VM, nested virtualization must be enabled.
-- Rust/Cargo **1.89 or newer**.
+- Rust/Cargo **1.100.0 or newer**.
 - Clang and LLVM's `ld.lld`, GNU Make, a host C toolchain, curl, tar, and
   `sha256sum`. On Ubuntu/Debian:
 

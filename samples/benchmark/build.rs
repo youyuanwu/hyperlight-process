@@ -18,6 +18,10 @@ fn main() -> Result<()> {
         std::env::var_os("CARGO_MANIFEST_DIR").context("CARGO_MANIFEST_DIR is missing")?,
     );
     let sample = manifest.join("../c-guest");
+    std::fs::create_dir_all(sample.join("build"))?;
+    // The native sample build script runs make on the same sample; serialize SDK setup.
+    let lock = std::fs::File::create(sample.join("build/.make.lock"))?;
+    lock.lock().context("locking the C guest build directory")?;
     let status = Command::new("make")
         .arg("-C")
         .arg(&sample)
