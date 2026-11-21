@@ -28,14 +28,8 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends clang lld
 
-      # Installs the version pinned in rust-toolchain.toml.
-      - name: Install Rust toolchain
-        run: |
-          rustup toolchain install
-          rustc --version
-          cargo --version
-
-      - uses: Swatinem/rust-cache@v2
+      # Installs the version pinned in rust-toolchain.toml and caches Cargo builds.
+      - uses: actions-rust-lang/setup-rust-toolchain@v2
 
       - name: Enable KVM
         run: |
