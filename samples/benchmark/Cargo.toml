@@ -16,7 +16,7 @@ anyhow.workspace = true
 cc = "1"
 
 [dev-dependencies]
-criterion = { version = "0.7", default-features = false, features = ["cargo_bench_support"] }
+criterion = { version = "0.8", default-features = false, features = ["cargo_bench_support"] }
 
 [[bin]]
 name = "hyperlight-benchmark"
